@@ -33,11 +33,11 @@ class PriceMachine():
                                         data[key] = row[possible_key]
                                         break
                             self.data.append(data)
-                    print(f"Файл {file} успешно прочитан.")  # Успешное завершение чтения файла
+                    print(f"{file} успешно прочитан")  # Успешное завершение чтения файла
                 except Exception as e:
                     print(f"Ошибка при чтении файла {file}: {e}")
             else:
-                print(f"Файл {file} пропущен, так как не является CSV или не начинается с price")
+                print(f"Файл {file} пропущен, так как не является CSV или не содержит price в названии")
 
     def _search_product_price_weight(self, headers):
         results = [product for product in self.data if headers.lower() in product.get('название', '').lower()]
